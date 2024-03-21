@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 69b8743e8a2ee46879056096fd8f5503
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - aliveCat: {fileID: 3680256834453106687, guid: 984f2ab2c52dc454d904bd2eb36074fa, type: 3}
+  - deadCat: {fileID: 3619736080873729681, guid: ec9cb49649dd649029e3b59ccef74b6d, type: 3}
+  - superPositionCat: {fileID: 6850599843851323529, guid: 316430c5f172a4b1d92e9c4b74bbbd66, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

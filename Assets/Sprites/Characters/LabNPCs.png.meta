@@ -1,0 +1,932 @@
+fileFormatVersion: 2
+guid: 2c3d5e281a6fd4423a67be778750a522
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LabNPCs_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 144
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67372c0e543744bcba35c37a03b66141
+      internalID: -849597068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_1
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 144
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 180586025a8e9436e847c4d6e1c3076e
+      internalID: -1540868784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 144
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e99e75ca23e4df38caede19d4fc39d
+      internalID: -937742318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_3
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 144
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e6a65919cbcb4d98ab198b03aff876a
+      internalID: 1565575397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_4
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 144
+        width: 17
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 591a2fd69acf449fdb4e34fcd7f493ba
+      internalID: 1670332252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_5
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 144
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb1d092946c434343839ec9db4915854
+      internalID: 1485370215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_6
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 144
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01d75dd75cbcf4af6aca66e502786668
+      internalID: -479101845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_7
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 144
+        width: 17
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b22bc89992eee4e37af2bf67fef4a39d
+      internalID: -1850024134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_8
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 144
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c002001d73b5f49e9a6192251cc95674
+      internalID: -202314993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_9
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d6588bbbbf8845a3b1621fd9c2c6d76
+      internalID: 1918050776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_10
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87f5c2fd9c9c747e5aa19aa326669643
+      internalID: -1655721670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_11
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 96
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e470dd9f5044617b50f5b8adbe73a9
+      internalID: 1843200797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_12
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 96
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 826447646596e4f27b1f59958b6a9771
+      internalID: -1673826171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_13
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 15
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f600de7b53824a37859aaa5effb4058
+      internalID: -1009691412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_14
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 96
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 413de2acc73544e62a7f672c4c52dcfa
+      internalID: -606856778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_15
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 96
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24a6c345c8eb14c2aa9722bb74861794
+      internalID: -1840821341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_16
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 96
+        width: 15
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67abc14e2356d43439b4df1546609f0b
+      internalID: -2113253017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_17
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 96
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b64adecda2a9d4e5a9c393461009d632
+      internalID: -847229474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_18
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 48
+        width: 18
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1dc26da889fe4ace8c49eb6e73b62c6
+      internalID: 1738210450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_19
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97a05e34ce7524a97937a61aafb9d173
+      internalID: -540311360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_20
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 48
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a81d7b1a0044017b06fee8652295d7
+      internalID: 1302686054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_21
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 48
+        width: 18
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cf9557727eae457281cdca61f07a2c4
+      internalID: 654247725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_22
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 15
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a3878f75e87041579c6f1a7f96cd5c2
+      internalID: 2044605996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_23
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 48
+        width: 15
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2d8cc0e29e5b4085aebca646a879d41
+      internalID: -774512866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_24
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 48
+        width: 18
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94522e2d70883444dbc7dd72be08ce38
+      internalID: -1446536032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_25
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 15
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14fa2a3f6b83f4abe811449800559ea5
+      internalID: 165592829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_26
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 48
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad3b871def0b54b0996772ac34193f4e
+      internalID: -540261918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_27
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8afcc9bfeb40425197252c06f3973d2
+      internalID: -1147827009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_28
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 0
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd8572949758443caa26e1120ffe2bfe
+      internalID: -1176168046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_29
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 15
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad7a2523be4444f209dab211882f2a2f
+      internalID: 1648875577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_30
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 15
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 484970ac36c1a436a95e10698c04f90b
+      internalID: -729312907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_31
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 0
+        width: 17
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c34a4523725f4b908bfeedaccc57bbd
+      internalID: -1396660909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_32
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 15
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 761b8cf2f64894a61b443787b52fa329
+      internalID: 1734662954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_33
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dadbd27cab644fb09fc83eb5c9afff6
+      internalID: -1357834806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_34
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 0
+        width: 17
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40bf821a6ce8a4a17902e59a695833a5
+      internalID: 2099708207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LabNPCs_35
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 0
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3b42364d88404dabb0467106c180aab
+      internalID: -2077095944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      LabNPCs_0: -849597068
+      LabNPCs_1: -1540868784
+      LabNPCs_10: -1655721670
+      LabNPCs_11: 1843200797
+      LabNPCs_12: -1673826171
+      LabNPCs_13: -1009691412
+      LabNPCs_14: -606856778
+      LabNPCs_15: -1840821341
+      LabNPCs_16: -2113253017
+      LabNPCs_17: -847229474
+      LabNPCs_18: 1738210450
+      LabNPCs_19: -540311360
+      LabNPCs_2: -937742318
+      LabNPCs_20: 1302686054
+      LabNPCs_21: 654247725
+      LabNPCs_22: 2044605996
+      LabNPCs_23: -774512866
+      LabNPCs_24: -1446536032
+      LabNPCs_25: 165592829
+      LabNPCs_26: -540261918
+      LabNPCs_27: -1147827009
+      LabNPCs_28: -1176168046
+      LabNPCs_29: 1648875577
+      LabNPCs_3: 1565575397
+      LabNPCs_30: -729312907
+      LabNPCs_31: -1396660909
+      LabNPCs_32: 1734662954
+      LabNPCs_33: -1357834806
+      LabNPCs_34: 2099708207
+      LabNPCs_35: -2077095944
+      LabNPCs_4: 1670332252
+      LabNPCs_5: 1485370215
+      LabNPCs_6: -479101845
+      LabNPCs_7: -1850024134
+      LabNPCs_8: -202314993
+      LabNPCs_9: 1918050776
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
