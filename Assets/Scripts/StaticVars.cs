@@ -5,5 +5,5 @@ using UnityEngine;
 public static class StaticVars
 {
     public static bool direct { get; set; } = false; // Default value is set to false
-    public static int heartNums = 5;
+    public static int heartNums = 4;
 }

@@ -5,15 +5,22 @@ using UnityEngine;
 
 public class AliveCat : MonoBehaviour
 {
-    public float framesPerSecond, distanceFromGround, jumpForce;
+    public float framesPerSecond, frameDuration, distanceFromGround, jumpForce;
     public float moveSpeed = 5f;
     public Sprite[] standing, licking, sideSprites, frames;
     public LayerMask groundLayer;
+    public Sprite[] endingSprites;
+    public float endingAnimationDuration = 5f;
+    public Vector2 endMove;
+    public HealthUI Health;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
     private Vector2 movement;
     private Coroutine currentAnimation;
     private bool isMoving = false;
+    private bool endReached = false;
+    // private Vector3 targetFinalPosition = new Vector3(1350.23f, -102.537f, 23.89023f);
+
 
     void Start()
     {
@@ -25,26 +32,31 @@ public class AliveCat : MonoBehaviour
 
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = 0;
-        if (Input.GetKeyDown(KeyCode.Space))
-            Jump();
+        if (!endReached)
+        {
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = 0;
+            if (Input.GetKeyDown(KeyCode.Space))
+                Jump();
 
-        if (Mathf.Abs(movement.x) > 0 && !isMoving) // Starts moving
-        {
-            isMoving = true;
-            UpdateMovementAnimation(true);
+            if (Mathf.Abs(movement.x) > 0 && !isMoving) // Starts moving
+            {
+                isMoving = true;
+                UpdateMovementAnimation(true);
+            }
+            else if (Mathf.Abs(movement.x) == 0 && isMoving) // Stops moving
+            {
+                isMoving = false;
+                StartIdleAnimationCycle(); // Go back to idle animations
+            }
         }
-        else if (Mathf.Abs(movement.x) == 0 && isMoving) // Stops moving
-        {
-            isMoving = false;
-            StartIdleAnimationCycle(); // Go back to idle animations
-        }
+
     }
 
     void FixedUpdate()
     {
-        rb.velocity = new Vector2(movement.x * moveSpeed, rb.velocity.y);
+        if (!endReached)
+            rb.velocity = new Vector2(movement.x * moveSpeed, rb.velocity.y);
     }
 
     bool IsGrounded()
@@ -61,7 +73,7 @@ public class AliveCat : MonoBehaviour
 
     void UpdateMovementAnimation(bool moving)
     {
-        if (moving)
+        if (moving && !endReached)
         {
             StopIdleAnimationCycle();
             if (movement.x > 0)
@@ -135,7 +147,33 @@ public class AliveCat : MonoBehaviour
         // Check if the collided object is on the Enemies layer
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
         {
-            StaticVars.heartNums--;
+            Health.DecreaseHealth();
         }
+        else if (collision.gameObject.CompareTag("Box"))
+        {
+            endReached = true;
+            StopAllCoroutines();
+            StartCoroutine(PlayEndingAnimation());
+        }
+
+    }
+
+    IEnumerator PlayEndingAnimation()
+    {
+        rb.velocity = endMove;
+        isMoving = false;
+
+       foreach (var frame in endingSprites)
+    {
+        spriteRenderer.sprite = frame;
+        yield return new WaitForSeconds(1/frameDuration);
+    }
+        RestartLevel();
+    }
+
+    void RestartLevel()
+    {
+        // For example, reload the current scene
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
