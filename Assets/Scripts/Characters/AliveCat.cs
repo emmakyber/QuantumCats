@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class AliveCat : MonoBehaviour
 {
-    public float framesPerSecond, frameDuration, distanceFromGround, jumpForce;
+    public float framesPerSecond, frameDuration, distanceFromGround, jumpForce, raycastDif;
     public float moveSpeed = 5f;
     public Sprite[] standing, licking, sideSprites, frames;
     public LayerMask groundLayer;
@@ -61,8 +61,12 @@ public class AliveCat : MonoBehaviour
 
     bool IsGrounded()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distanceFromGround, groundLayer);
-        return hit.collider != null;
+        Vector3 rightRayOrigin = transform.position + new Vector3(raycastDif, 0, 0);
+        Vector3 leftRayOrigin = transform.position + new Vector3(-raycastDif, 0, 0);
+        RaycastHit2D hit1 = Physics2D.Raycast(rightRayOrigin, Vector2.down, distanceFromGround, groundLayer);
+        RaycastHit2D hit2 = Physics2D.Raycast(transform.position, Vector2.down, distanceFromGround, groundLayer);
+        RaycastHit2D hit3 = Physics2D.Raycast(leftRayOrigin, Vector2.down, distanceFromGround, groundLayer);
+        return (hit1.collider != null || hit2.collider != null || hit3.collider != null);
     }
 
     void Jump()
@@ -168,12 +172,25 @@ public class AliveCat : MonoBehaviour
         spriteRenderer.sprite = frame;
         yield return new WaitForSeconds(1/frameDuration);
     }
-        RestartLevel();
+        StaticVars.level++;
+        NextLevel();
     }
 
     void RestartLevel()
     {
         // For example, reload the current scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    void NextLevel()
+    {
+        if (StaticVars.level >= 3)
+        {
+            StaticVars.level = 1;
+            SceneManager.LoadScene("Game Won");
+        }
+        else{
+            SceneManager.LoadScene("Level " + StaticVars.level);
+        }
     }
 }

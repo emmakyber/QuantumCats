@@ -102,7 +102,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_GravityScale: 24
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -127,9 +127,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   framesPerSecond: 8
+  frameDuration: 0
   distanceFromGround: 25
   jumpForce: 200
-  moveSpeed: 100
+  moveSpeed: 150
   standing:
   - {fileID: -984272948, guid: b82237e8e5e154c7fa4e589258175d15, type: 3}
   - {fileID: -425412029, guid: b82237e8e5e154c7fa4e589258175d15, type: 3}
@@ -162,6 +163,10 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  endingSprites: []
+  endingAnimationDuration: 5
+  endMove: {x: 0, y: 0}
+  Health: {fileID: 0}
 --- !u!60 &3650465564390571753
 PolygonCollider2D:
   m_ObjectHideFlags: 0

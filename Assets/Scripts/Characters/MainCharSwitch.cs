@@ -7,6 +7,7 @@ public class MainCharSwitch : MonoBehaviour
     public GameObject aliveCat, deadCat, superPositionCat;
     public Vector3 lastKnownPosition;
     public Vector3 currentPos;
+    public StateShiftUI state;
     void Start()
     {
         aliveCat.SetActive(true);
@@ -21,14 +22,17 @@ public class MainCharSwitch : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             ActivateCat(aliveCat);
+            state.Switch(1);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             ActivateCat(deadCat);
+            state.Switch(2);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             ActivateCat(superPositionCat);
+            state.Switch(3);
         }
         if (aliveCat.activeSelf)
             currentPos = aliveCat.transform.position;
@@ -46,13 +50,12 @@ public class MainCharSwitch : MonoBehaviour
         else if (superPositionCat.activeSelf)
             lastKnownPosition = superPositionCat.transform.position;
 
-        // Deactivate all cats
         aliveCat.SetActive(false);
         deadCat.SetActive(false);
         superPositionCat.SetActive(false);
 
-        // Activate the selected cat and apply the last known position
         catToActivate.SetActive(true);
         catToActivate.transform.position = lastKnownPosition;
+
     }
 }

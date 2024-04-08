@@ -102,7 +102,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 20
+  m_GravityScale: 24
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -197,7 +197,7 @@ MonoBehaviour:
   framesPerSecond: 8
   distanceFromGround: 25
   jumpForce: 200
-  moveSpeed: 100
+  moveSpeed: 150
   standing:
   - {fileID: 89613253, guid: 546a3833b5f384560afe9af92516d931, type: 3}
   - {fileID: 1736929570, guid: 546a3833b5f384560afe9af92516d931, type: 3}

@@ -5,5 +5,15 @@ using UnityEngine;
 public static class StaticVars
 {
     public static bool direct { get; set; } = false; // Default value is set to false
+    public static bool restarted = false;
     public static int heartNums = 4;
+    public static int level = 0;
+
+    public static void Reset()
+    {
+        direct = false;
+        heartNums = 4;
+        restarted = false;
+        level = 0;
+    }
 }
