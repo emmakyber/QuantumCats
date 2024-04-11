@@ -6,6 +6,7 @@ public class SuperPositionCat : MonoBehaviour
 {
     public float framesPerSecond, distanceFromGround, jumpForce, raycastDif;
     public float moveSpeed = 5f;
+    public float fallForce = 10f;
     public Sprite[] standing, licking, sideSprites, frames;
     public LayerMask groundLayer;
     private Rigidbody2D rb;
@@ -13,6 +14,7 @@ public class SuperPositionCat : MonoBehaviour
     private Vector2 movement;
     private Coroutine currentAnimation;
     private bool isMoving = false;
+    private bool isJumping = false;
 
     void Start()
     {
@@ -44,6 +46,17 @@ public class SuperPositionCat : MonoBehaviour
     void FixedUpdate()
     {
         rb.velocity = new Vector2(movement.x * moveSpeed, rb.velocity.y);
+
+        // Apply additional gravity force during ascent
+        if (rb.velocity.y > 0)
+        {
+            rb.AddForce(Vector2.down * fallForce * 2f); // Adjust this value as needed
+        }
+        else if (rb.velocity.y < 0)
+        {
+            rb.AddForce(Vector2.down * fallForce, ForceMode2D.Impulse);
+        }
+
     }
 
     bool IsGrounded()

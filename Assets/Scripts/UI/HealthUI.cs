@@ -12,15 +12,15 @@ public class HealthUI : MonoBehaviour
     
     public void DecreaseHealth()
     {
+        Debug.Log("heart decreasing index is " + StaticVars.heartNums);
         if (StaticVars.heartNums >= 0)
             StartCoroutine(AnimateHeartDecrease(StaticVars.heartNums));
-        else
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     IEnumerator AnimateHeartDecrease(int heartIndex)
     {
         Image heartImage = hearts[heartIndex].GetComponent<Image>();
+        Debug.Log("heart index " + heartIndex);
         if (heartImage != null)
         {
             float duration = 2f;
@@ -32,7 +32,10 @@ public class HealthUI : MonoBehaviour
             }
         }
         StaticVars.heartNums--;
-        if (StaticVars.heartNums < 0)
+         if (StaticVars.heartNums < 0)
+         {
+            StaticVars.heartNums = 4;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+         }
     }
 }

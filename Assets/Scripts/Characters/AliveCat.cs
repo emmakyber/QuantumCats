@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class AliveCat : MonoBehaviour
 {
-    public float framesPerSecond, frameDuration, distanceFromGround, jumpForce, raycastDif;
+    public float framesPerSecond, frameDuration, distanceFromGround, jumpForce, raycastDif, knockbackForce;
     public float moveSpeed = 5f;
+    public float fallForce = 10f;
     public Sprite[] standing, licking, sideSprites, frames;
     public LayerMask groundLayer;
     public Sprite[] endingSprites;
@@ -18,9 +19,9 @@ public class AliveCat : MonoBehaviour
     private Vector2 movement;
     private Coroutine currentAnimation;
     private bool isMoving = false;
+    private bool isJumping = false;
     private bool endReached = false;
-    // private Vector3 targetFinalPosition = new Vector3(1350.23f, -102.537f, 23.89023f);
-
+    private bool enemyHit = false;
 
     void Start()
     {
@@ -38,7 +39,6 @@ public class AliveCat : MonoBehaviour
             movement.y = 0;
             if (Input.GetKeyDown(KeyCode.Space))
                 Jump();
-
             if (Mathf.Abs(movement.x) > 0 && !isMoving) // Starts moving
             {
                 isMoving = true;
@@ -55,8 +55,18 @@ public class AliveCat : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!endReached)
+        if (!endReached && !enemyHit)
+        {
             rb.velocity = new Vector2(movement.x * moveSpeed, rb.velocity.y);
+            if (rb.velocity.y > 0)
+            {
+                rb.AddForce(Vector2.down * fallForce * 2f);
+            }
+            else if (rb.velocity.y < 0)
+            {
+                rb.AddForce(Vector2.down * fallForce, ForceMode2D.Impulse);
+            }
+        }
     }
 
     bool IsGrounded()
@@ -72,7 +82,7 @@ public class AliveCat : MonoBehaviour
     void Jump()
     {
         if (IsGrounded())
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
     void UpdateMovementAnimation(bool moving)
@@ -145,13 +155,12 @@ public class AliveCat : MonoBehaviour
             currentAnimation = null;
         }
     }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         // Check if the collided object is on the Enemies layer
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
         {
-            Health.DecreaseHealth();
+            StartCoroutine(knockBack(collision));
         }
         else if (collision.gameObject.CompareTag("Box"))
         {
@@ -159,19 +168,29 @@ public class AliveCat : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(PlayEndingAnimation());
         }
-
     }
 
+    IEnumerator knockBack(Collision2D collision)
+    {
+        enemyHit = true;
+        Health.DecreaseHealth();
+        Vector2 enemyPosition = collision.transform.position;
+        Vector2 knockbackDirection = (rb.position - enemyPosition).normalized;
+        rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(0.14f);
+        rb.velocity = Vector2.zero;
+        enemyHit = false;
+    }
     IEnumerator PlayEndingAnimation()
     {
         rb.velocity = endMove;
         isMoving = false;
 
-       foreach (var frame in endingSprites)
-    {
-        spriteRenderer.sprite = frame;
-        yield return new WaitForSeconds(1/frameDuration);
-    }
+        foreach (var frame in endingSprites)
+        {
+            spriteRenderer.sprite = frame;
+            yield return new WaitForSeconds(1 / frameDuration);
+        }
         StaticVars.level++;
         NextLevel();
     }
@@ -179,6 +198,9 @@ public class AliveCat : MonoBehaviour
     void RestartLevel()
     {
         // For example, reload the current scene
+        Debug.Log("Restarting level");
+        StaticVars.heartNums = 4;
+        Debug.Log("heartNums is " + StaticVars.heartNums);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
@@ -186,10 +208,13 @@ public class AliveCat : MonoBehaviour
     {
         if (StaticVars.level >= 3)
         {
+            StaticVars.heartNums = 4;
             StaticVars.level = 1;
             SceneManager.LoadScene("Game Won");
         }
-        else{
+        else
+        {
+            StaticVars.heartNums = 4;
             SceneManager.LoadScene("Level " + StaticVars.level);
         }
     }
