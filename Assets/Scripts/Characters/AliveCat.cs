@@ -174,6 +174,7 @@ public class AliveCat : MonoBehaviour
     {
         enemyHit = true;
         Health.DecreaseHealth();
+        StaticVars.heartNums--;
         Vector2 enemyPosition = collision.transform.position;
         Vector2 knockbackDirection = (rb.position - enemyPosition).normalized;
         rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
