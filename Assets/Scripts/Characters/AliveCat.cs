@@ -239,6 +239,7 @@ public class AliveCat : MonoBehaviour
         else
         {
             StaticVars.heartNums = 4;
+            StaticVars.superPositionTimer = 24f;
             SceneManager.LoadScene("Level " + StaticVars.level);
         }
     }
