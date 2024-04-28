@@ -230,7 +230,7 @@ public class AliveCat : MonoBehaviour
 
     void NextLevel()
     {
-        if (StaticVars.level >= 4)
+        if (StaticVars.level >= 5)
         {
             StaticVars.heartNums = 4;
             StaticVars.level = 1;
