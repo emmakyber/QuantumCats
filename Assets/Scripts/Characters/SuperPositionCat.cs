@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class SuperPositionCat : MonoBehaviour
 {
+    public AudioClip[] jumpSounds;  // Array to hold jump sound clips
+    private AudioSource audioSource;
     public float framesPerSecond, distanceFromGround, jumpForce, raycastDif;
     public float moveSpeed = 5f;
     public float fallForce = 10f;
     public Sprite[] standing, licking, sideSprites, frames;
+    public GameObject aliveCat, deadCat;
     public LayerMask groundLayer;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -20,12 +23,21 @@ public class SuperPositionCat : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
         StartIdleAnimationCycle();
     }
 
 
     void Update()
     {
+        if (StaticVars.superPositionActive)
+        {
+            StaticVars.superPositionTimer -= Time.deltaTime;
+            if (StaticVars.superPositionTimer <= 0)
+            {
+                StaticVars.superPositionActive = false;
+            }
+        }
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = 0;
         if (Input.GetKeyDown(KeyCode.Space))
@@ -72,7 +84,20 @@ public class SuperPositionCat : MonoBehaviour
     void Jump()
     {
         if (IsGrounded())
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        {
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            PlayRandomJumpSound();
+        }
+    }
+
+    void PlayRandomJumpSound()
+    {
+        if (jumpSounds.Length > 0)
+        {
+            int index = Random.Range(0, jumpSounds.Length);  // Get a random index
+            audioSource.clip = jumpSounds[index];  // Set the clip to play
+            audioSource.Play();  // Play the clip
+        }
     }
 
     void UpdateMovementAnimation(bool moving)

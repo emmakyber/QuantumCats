@@ -19,8 +19,9 @@ public class MainCharSwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) || StaticVars.superPositionEmpty)
         {
+            StaticVars.superPositionEmpty = false;
             ActivateCat(aliveCat);
             state.Switch(1);
         }
@@ -29,9 +30,10 @@ public class MainCharSwitch : MonoBehaviour
             ActivateCat(deadCat);
             state.Switch(2);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.Alpha3) && StaticVars.superPositionTimer > 0)
         {
             ActivateCat(superPositionCat);
+            StaticVars.superPositionActive = true;
             state.Switch(3);
         }
         if (aliveCat.activeSelf)
@@ -41,7 +43,7 @@ public class MainCharSwitch : MonoBehaviour
         else if (superPositionCat.activeSelf)
             currentPos = superPositionCat.transform.position;
     }
-    void ActivateCat(GameObject catToActivate)
+    public void ActivateCat(GameObject catToActivate)
     {
        if (aliveCat.activeSelf)
             lastKnownPosition = aliveCat.transform.position;

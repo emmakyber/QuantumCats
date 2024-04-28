@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class AliveCat : MonoBehaviour
 {
+    public AudioClip[] jumpSounds;  // Array to hold jump sound clips
+    public AudioClip hitSound, victorySound;
+    private AudioSource audioSource;
     public float framesPerSecond, frameDuration, distanceFromGround, jumpForce, raycastDif, knockbackForce;
     public float moveSpeed = 5f;
     public float fallForce = 10f;
@@ -12,7 +15,8 @@ public class AliveCat : MonoBehaviour
     public LayerMask groundLayer;
     public Sprite[] endingSprites;
     public float endingAnimationDuration = 5f;
-    public Vector2 endMove;
+    public GameObject box;
+    private Vector2 endMove;
     public HealthUI Health;
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -22,18 +26,20 @@ public class AliveCat : MonoBehaviour
     private bool isJumping = false;
     private bool endReached = false;
     private bool enemyHit = false;
+    private bool controlAllowed = true;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
         StartIdleAnimationCycle();
     }
 
 
     void Update()
     {
-        if (!endReached)
+        if (!endReached && controlAllowed)
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = 0;
@@ -55,7 +61,7 @@ public class AliveCat : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!endReached && !enemyHit)
+        if (!endReached && !enemyHit && controlAllowed)
         {
             rb.velocity = new Vector2(movement.x * moveSpeed, rb.velocity.y);
             if (rb.velocity.y > 0)
@@ -82,7 +88,18 @@ public class AliveCat : MonoBehaviour
     void Jump()
     {
         if (IsGrounded())
+        {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            PlayRandomJumpSound();
+        }
+    }
+    void PlayRandomJumpSound()
+    {
+        if (jumpSounds.Length > 0)
+        {
+            int index = Random.Range(0, jumpSounds.Length);  // Get a random index
+            audioSource.PlayOneShot(jumpSounds[index]);  // Play the clip
+        }
     }
 
     void UpdateMovementAnimation(bool moving)
@@ -160,12 +177,17 @@ public class AliveCat : MonoBehaviour
         // Check if the collided object is on the Enemies layer
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemies"))
         {
+            audioSource.PlayOneShot(hitSound);
             StartCoroutine(knockBack(collision));
         }
         else if (collision.gameObject.CompareTag("Box"))
         {
-            endReached = true;
-            StopAllCoroutines();
+            audioSource.PlayOneShot(victorySound);
+            controlAllowed = false;
+            float moveDirection = Mathf.Sign(movement.x); // Get -1, 0, or 1 based on the direction of movement
+            float moveSpeed = 5.0f; // Example move speed, adjust as necessary
+            endMove = new Vector2(moveDirection * 10, 5); // Set endMove to move in the direction of impact
+
             StartCoroutine(PlayEndingAnimation());
         }
     }
@@ -184,13 +206,14 @@ public class AliveCat : MonoBehaviour
     }
     IEnumerator PlayEndingAnimation()
     {
+        box.GetComponent<BoxCollider2D>().isTrigger = true;
         rb.velocity = endMove;
         isMoving = false;
 
         foreach (var frame in endingSprites)
         {
             spriteRenderer.sprite = frame;
-            yield return new WaitForSeconds(1 / frameDuration);
+            yield return new WaitForSeconds(.5f);
         }
         StaticVars.level++;
         NextLevel();
@@ -207,7 +230,7 @@ public class AliveCat : MonoBehaviour
 
     void NextLevel()
     {
-        if (StaticVars.level >= 3)
+        if (StaticVars.level >= 4)
         {
             StaticVars.heartNums = 4;
             StaticVars.level = 1;

@@ -15,6 +15,7 @@ public class PauseMenu : MonoBehaviour
 
     public void TogglePauseMenuOn()
     {
+        Debug.Log("Pause Menu Toggled");
         // Toggle the visibility of the pause menu
         pauseMenu.SetActive(true);
 
